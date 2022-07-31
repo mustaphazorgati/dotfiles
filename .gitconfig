@@ -1,0 +1,23 @@
+[user]
+	email = 15628173+mustaphazorgati@users.noreply.github.com
+	name = Mustapha Zorgati
+[color]
+	ui = true
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore
+[merge]
+	conflictsstyle = diff3
+[branch]
+  autosetuprebase = always
+  # Make sure you're adding under the [alias] block.
+[alias]
+  tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
