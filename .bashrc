@@ -8,4 +8,5 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 alias config='/usr/bin/git --git-dir=/home/mustapha/.dotfiles/ --work-tree=/home/mustapha'
+alias terminal=urxvt
 export GPG_TTY=$(tty)
