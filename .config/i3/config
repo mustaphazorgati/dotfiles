@@ -139,6 +139,8 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+Shift+q kill
 
+for_window [class="Nm-connection-editor"] floating enable border normal
+
 ##################################################################################
 #                                                                                #
 ## WORKSPACES                                                                   ##
