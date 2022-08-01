@@ -21,3 +21,14 @@ alias terminal=urxvt
 export GPG_TTY=$(tty)
 
 source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+
+# HISTORY
+
+# Enable history append instead od overwriting
+shopt -s histappend
+# Avoid duplicates
+export HISTCONTROL=ignoredups:erasedups
+# After each command, append to the history file and reread it
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+export HISTSIZE=500000
+export HISTFILESIZE=500000
