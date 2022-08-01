@@ -44,7 +44,9 @@ bindsym $mod+minus scratchpad show
 
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+$alt+h exec dunstctl history-pop
-bindsym $mod+$alt+p exec dunstctl close-all
+bindsym $mod+$alt+c exec dunstctl close-all
+
+bindsym Ctrl+$alt+h exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 ##################################################################################
 #                                                                                #
@@ -84,7 +86,6 @@ for_window [instance="ssh-add"] resize set 800 300
 for_window [instance="ssh-add"] border pixel 2
 for_window [instance="ssh-add"] sticky enable
 for_window [instance="ssh-add"] focus
-
 
 ##################################################################################
 #                                                                                #
@@ -327,14 +328,13 @@ mode "$mode_system" {
   bindsym $mod+$alt+l mode "default"
 }
 
-
 ##################################################################################
 #                                                                                #
 ## AUTOSTART                                                                    ##
 #                                                                                #
 ##################################################################################
 
-
+exec --no-startup-id greenclip daemon
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id nm-applet
 exec --no-startup-id $HOME/.screenlayout/laptop.sh
