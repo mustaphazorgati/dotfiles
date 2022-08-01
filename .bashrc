@@ -19,3 +19,5 @@ PS1='[\u@\h \W]\$ '
 alias config='/usr/bin/git --git-dir=/home/mustapha/.dotfiles/ --work-tree=/home/mustapha'
 alias terminal=urxvt
 export GPG_TTY=$(tty)
+
+source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null

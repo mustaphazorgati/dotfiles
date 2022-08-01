@@ -79,6 +79,13 @@ for_window [instance="math"] border pixel 2
 exec --no-startup-id urxvt -name math -e python
 bindsym $mod+a [instance="math"] scratchpad show; [instance="math"] move position center
 
+for_window [instance="ssh-add"] floating enable
+for_window [instance="ssh-add"] resize set 800 300
+for_window [instance="ssh-add"] border pixel 2
+for_window [instance="ssh-add"] sticky enable
+for_window [instance="ssh-add"] focus
+
+
 ##################################################################################
 #                                                                                #
 ## TILE MANAGEMENT                                                              ##
@@ -86,7 +93,7 @@ bindsym $mod+a [instance="math"] scratchpad show; [instance="math"] move positio
 ##################################################################################
 
 focus_follows_mouse no
-
+focus_on_window_activation smart
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -327,18 +334,22 @@ mode "$mode_system" {
 #                                                                                #
 ##################################################################################
 
+
 exec --no-startup-id nm-applet
 exec --no-startup-id $HOME/.screenlayout/laptop.sh
 exec --no-startup-id blueman-applet
-exec --no-startup-id i3-msg workspace $ws1
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id spotify
 exec --no-startup-id dunst
+# start SSH agent if not already running
+exec --no-startup-id ! pgrep -u "$USER" ssh-agent >/dev/null && ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
+# add primary ssh key to keyring (floating sticky window)
+exec --no-startup-id urxvt -name ssh-add -e bash -c 'source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null && ssh-add'
 
+exec --no-startup-id i3-msg workspace $ws1
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
 
 ##################################################################################
 #                                                                                #
