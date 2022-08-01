@@ -32,3 +32,5 @@ export HISTCONTROL=ignoredups:erasedups
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 export HISTSIZE=500000
 export HISTFILESIZE=500000
+
+eval $(thefuck --alias)
