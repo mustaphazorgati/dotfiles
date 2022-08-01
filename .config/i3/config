@@ -42,7 +42,9 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
-#bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+$alt+h exec dunstctl history-pop
+bindsym $mod+$alt+p exec dunstctl close-all
 
 ##################################################################################
 #                                                                                #
@@ -330,6 +332,8 @@ exec --no-startup-id $HOME/.screenlayout/laptop.sh
 exec --no-startup-id blueman-applet
 exec --no-startup-id i3-msg workspace $ws1
 exec --no-startup-id google-chrome-stable
+exec --no-startup-id spotify
+exec --no-startup-id dunst
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
