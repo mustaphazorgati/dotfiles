@@ -324,6 +324,7 @@ mode "$mode_system" {
 ##################################################################################
 
 exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 exec --no-startup-id i3-msg workspace $ws1
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
