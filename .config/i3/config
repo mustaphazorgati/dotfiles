@@ -342,6 +342,7 @@ exec --no-startup-id $HOME/.screenlayout/laptop.sh
 exec --no-startup-id blueman-applet
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id spotify
+exec --no-startup-id slack
 exec --no-startup-id dunst
 # start SSH agent if not already running
 exec --no-startup-id ! pgrep -u "$USER" ssh-agent >/dev/null && ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
