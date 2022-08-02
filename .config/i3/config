@@ -150,6 +150,8 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+Shift+q kill
 
+for_window [workspace=$ws1] layout tabbed
+
 for_window [class="Nm-connection-editor"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable
 ##################################################################################
@@ -225,6 +227,7 @@ for_window [class="Spotify"] move --no-auto-back-and-forth container to workspac
 assign [class="Spotify"] $ws0
 assign [class="Slack"] $ws1
 assign [class="TelegramDesktop"] $ws1
+assign [class="Signal"] $ws1
 assign [class="Google-chrome"] $ws2
 assign [class="jetbrains-idea"] $ws3
 assign [class="Code"] $ws3
@@ -342,14 +345,15 @@ exec --no-startup-id $HOME/.screenlayout/laptop.sh
 exec --no-startup-id blueman-applet
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id spotify
+exec --no-startup-id telegram-desktop
+exec --no-startup-id signal-desktop
 exec --no-startup-id slack
 exec --no-startup-id dunst
 # start SSH agent if not already running
 exec --no-startup-id ! pgrep -u "$USER" ssh-agent >/dev/null && ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
 # add primary ssh key to keyring (floating sticky window)
-exec --no-startup-id urxvt -name ssh-add -e bash -c 'source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null && ssh-add'
+exec --no-startup-id i3-msg workspace ssh; urxvt -name ssh-add -e bash -c 'source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null && ssh-add' && i3-msg workspace $ws1; i3-msg [class="Signal"] focus; i3-msg [class="Slack"] focus
 
-exec --no-startup-id i3-msg workspace $ws1
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
