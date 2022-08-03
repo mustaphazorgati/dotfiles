@@ -20,8 +20,6 @@ alias config='/usr/bin/git --git-dir=/home/mustapha/.dotfiles/ --work-tree=/home
 alias terminal=urxvt
 export GPG_TTY=$(tty)
 
-source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-
 # HISTORY
 
 # Enable history append instead od overwriting

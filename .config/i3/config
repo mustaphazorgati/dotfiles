@@ -342,8 +342,6 @@ mode "$mode_system" {
 exec --no-startup-id dunst
 exec --no-startup-id greenclip daemon
 exec --no-startup-id nitrogen --restore
-# start SSH agent if not already running
-exec --no-startup-id ! pgrep -u "$USER" ssh-agent >/dev/null && ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
 
 # APPLETS
 exec --no-startup-id nm-applet
@@ -359,7 +357,7 @@ exec --no-startup-id gitkraken
 exec --no-startup-id $HOME/.screenlayout/laptop.sh
 
 # add primary ssh key to keyring (floating sticky window)
-exec --no-startup-id i3-msg workspace ssh; urxvt -name ssh-add -e bash -c 'source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null && ssh-add' && i3-msg workspace $ws1; i3-msg [class="Signal"] focus; i3-msg [class="Slack"] focus
+exec --no-startup-id i3-msg workspace ssh; urxvt -name ssh-add -e ssh-add && i3-msg workspace $ws1; i3-msg [class="Signal"] focus; i3-msg [class="Slack"] focus
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
