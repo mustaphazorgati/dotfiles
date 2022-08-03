@@ -1,0 +1,26 @@
+{
+  "layout":"tabbed",
+  "nodes":[
+    {
+      "swallows":[
+        {
+          "class":"TelegramDesktop"
+        }
+      ]
+    },
+    {
+      "swallows":[
+        {
+          "class":"Signal"
+        }
+      ]
+    },
+    {
+      "swallows":[
+        {
+          "class":"Slack"
+        }
+      ]
+    }
+  ]
+}

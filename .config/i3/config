@@ -150,8 +150,6 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+Shift+q kill
 
-for_window [workspace=$ws1] layout tabbed
-
 for_window [class="Nm-connection-editor"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable
 ##################################################################################
@@ -221,6 +219,9 @@ bindsym $mod+Ctrl+Shift+h move workspace to output left
 bindsym $mod+Ctrl+Shift+j move workspace to output up
 bindsym $mod+Ctrl+Shift+k move workspace to output down
 bindsym $mod+Ctrl+Shift+l move workspace to output right
+
+# layout
+exec --no-startup-id i3-msg workspace $ws1; i3-msg append_layout "$HOME/.config/i3/workspace-1.json"
 
 # Open applications on specific workspaces
 for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace $ws0
