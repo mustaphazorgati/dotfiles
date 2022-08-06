@@ -1,0 +1,13 @@
+[Default Applications]
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/mailto=google-chrome.desktop
+x-scheme-handler/webcal=google-chrome.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-RU37P1.desktop
+x-scheme-handler/gitkraken=GitKraken.desktop
+
+[Added Associations]
+x-scheme-handler/tg=userapp-Telegram Desktop-RU37P1.desktop;
