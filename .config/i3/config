@@ -385,6 +385,9 @@ bar {
   status_command i3status
   font pango:System San Francisco Display 11, pango:FontAwesome 11
 
+  bindsym button4 nop
+  bindsym button5 nop
+
   colors {
     background $bg-color
     separator #757575
