@@ -92,6 +92,9 @@ for_window [class="zoom"] floating enable
 no_focus [class="zoom" title="^zoom"]
 for_window [class="zoom" title="^Zoom( Meeting)?$"] floating disable
 
+for_window [class="VirtualBox Manager"] floating enable
+for_window [class="VirtualBox Machine"] fullscreen enable
+
 ##################################################################################
 #                                                                                #
 ## TILE MANAGEMENT                                                              ##
@@ -175,7 +178,8 @@ set $ws5 5:
 set $ws6 6
 set $ws7 7
 set $ws8 8
-set $ws9 9
+# fa-brands fa-windows
+set $ws9 9:
 # fa-brands fa-spotify
 set $ws0 0:
 
@@ -240,6 +244,7 @@ assign [class="jetbrains-idea"] $ws3
 assign [class="Code"] $ws3
 assign [class="GitKraken"] $ws4
 assign [class="zoom"] $ws5
+assign [class="VirtualBox*"] $ws9
 
 ##################################################################################
 #                                                                                #
