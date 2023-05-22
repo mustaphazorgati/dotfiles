@@ -236,7 +236,6 @@ bindsym $mod+Ctrl+Shift+l move workspace to output right
 
 # Open applications on specific workspaces
 for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace $ws0
-assign [class="Slack"] $ws1
 assign [class="TelegramDesktop"] $ws1
 assign [class="Signal"] $ws1
 assign [class="Google-chrome"] $ws2
@@ -367,7 +366,6 @@ exec --no-startup-id intellij-idea-ultimate-edition
 exec --no-startup-id spotify
 exec --no-startup-id telegram-desktop
 exec --no-startup-id signal-desktop
-exec --no-startup-id slack
 exec --no-startup-id gitkraken
 exec --no-startup-id $HOME/.screenlayout/laptop.sh
 
