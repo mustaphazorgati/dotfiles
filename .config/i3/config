@@ -354,7 +354,7 @@ mode "$mode_system" {
 # DAEMONS
 exec --no-startup-id dunst
 exec --no-startup-id greenclip daemon
-exec --no-startup-id picom -b --experimental-backends
+exec --no-startup-id picom -b 
 
 # APPLETS
 exec --no-startup-id nm-applet
