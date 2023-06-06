@@ -244,6 +244,7 @@ assign [class="Code"] $ws3
 assign [class="GitKraken"] $ws4
 assign [class="zoom"] $ws5
 assign [class="VirtualBox*"] $ws9
+assign [class="Wfica"] $ws9
 
 ##################################################################################
 #                                                                                #

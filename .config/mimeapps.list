@@ -10,6 +10,7 @@ x-scheme-handler/tg=userapp-Telegram Desktop-001ZQ1.desktop
 x-scheme-handler/gitkraken=GitKraken.desktop
 x-scheme-handler/postman=Postman.desktop
 x-scheme-handler/msteams=teams.desktop
+application/x-wine-extension-ini=citrix-wfica.desktop
 
 [Added Associations]
 x-scheme-handler/tg=userapp-Telegram Desktop-001ZQ1.desktop;
