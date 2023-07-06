@@ -1,9 +1,12 @@
 if status is-interactive
   # Commands to run in interactive sessions can go here
+  fish_config theme choose "Dracula Official"
   thefuck --alias | source
   export GPG_TTY=$(tty)
 
   # alias / abbr
+  abbr rm trash
+  alias rm trash
   abbr ll 'ls -lah'
   alias ll 'ls -lah'
   abbr open xdg-open
