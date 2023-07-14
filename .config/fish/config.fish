@@ -21,6 +21,8 @@ if status is-interactive
   alias pbpaste 'xsel --clipboard --output'
   abbr  config 'git --git-dir=/home/mustapha/.dotfiles --work-tree=/home/mustapha'
   alias config 'git --git-dir=/home/mustapha/.dotfiles --work-tree=/home/mustapha'
+  abbr  installer 'git --git-dir=/home/mustapha/.installer/.git --work-tree=/home/mustapha/.installer'
+  alias installer 'git --git-dir=/home/mustapha/.installer/.git --work-tree=/home/mustapha/.installer'
   abbr  terminal urxvt
   alias terminal urxvt
 
