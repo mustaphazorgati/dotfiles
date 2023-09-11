@@ -105,7 +105,8 @@ for_window [class="Pavucontrol"] floating enable
 ##################################################################################
 
 focus_follows_mouse no
-focus_on_window_activation smart
+no_focus [all]
+focus_on_window_activation none
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -239,6 +240,8 @@ bindsym $mod+Ctrl+Shift+l move workspace to output right
 for_window [class="Spotify"] move --no-auto-back-and-forth container to workspace $ws0
 assign [class="TelegramDesktop"] $ws1
 assign [class="Signal"] $ws1
+assign [class="Slack"] $ws1
+assign [class="Microsoft Teams - Preview"] $ws1
 assign [class="Google-chrome"] $ws2
 assign [class="jetbrains-idea"] $ws3
 assign [class="Code"] $ws3
@@ -368,6 +371,8 @@ exec --no-startup-id intellij-idea-ultimate-edition
 exec --no-startup-id spotify
 exec --no-startup-id telegram-desktop
 exec --no-startup-id signal-desktop
+exec --no-startup-id teams
+exec --no-startup-id slack
 exec --no-startup-id gitkraken
 exec --no-startup-id $HOME/.screenlayout/laptop.sh
 

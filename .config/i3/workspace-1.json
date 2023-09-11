@@ -4,14 +4,29 @@
     {
       "swallows":[
         {
-          "class":"TelegramDesktop"
+          "class": "TelegramDesktop"
         }
       ]
     },
     {
       "swallows":[
         {
-          "class":"Signal"
+          "class": "Signal"
+        }
+      ]
+    },
+    {
+      "swallows":[
+        {
+          "class": "Slack"
+        }
+      ]
+    },
+    {
+      "swallows":[
+        {
+          "class": "Microsoft Teams - Preview",
+          "title": "^.* \\| Microsoft Teams$"
         }
       ]
     }
