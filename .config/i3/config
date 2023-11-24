@@ -55,18 +55,20 @@ bindsym Ctrl+$alt+h exec rofi -modi "clipboard:greenclip print" -show clipboard 
 ##################################################################################
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -u -i 5 && $refresh_i3status
+set $refresh_statusbar pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -u -i 5 && $refresh_statusbar
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% &10v& $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -u -d 5 && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pamixer -t && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -u -d 5 && $refresh_statusbar
+bindsym XF86AudioMute exec --no-startup-id pamixer -t && $refresh_statusbar
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_statusbar
 
 ##################################################################################
 #                                                                                #
 ## FLOATING                                                                     ##
 #                                                                                #
 ##################################################################################
+
+for_window [class="Yad"] floating enable
 
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 1500 600
@@ -105,8 +107,7 @@ for_window [class="Pavucontrol"] floating enable
 ##################################################################################
 
 focus_follows_mouse no
-no_focus [all]
-focus_on_window_activation none
+focus_on_window_activation smart
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -393,7 +394,7 @@ bar {
   position bottom
   tray_output primary
   strip_workspace_numbers yes
-  status_command i3status
+  status_command SCRIPT_DIR=/home/mustapha/Projects/i3blocks-contrib i3blocks -c $HOME/.config/i3/i3blocks.conf
   font pango:System San Francisco Display 11, pango:FontAwesome 11
 
   bindsym button4 nop

@@ -11,5 +11,5 @@ xrandr \
 
 xrandr --output DP-4 --scale 0.5x0.5
 
-sleep 1
+sleep 3
 nitrogen --restore

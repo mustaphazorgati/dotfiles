@@ -26,7 +26,7 @@
       "swallows":[
         {
           "class": "Microsoft Teams - Preview",
-          "title": "^.* \\| Microsoft Teams$"
+          "title": "^(.* \\| )?Microsoft Teams( classic)?$"
         }
       ]
     }

@@ -7,5 +7,5 @@ xrandr \
   --output DP-3   --off \
   --output DP-4   --scale 0.5x0.5 --primary --mode 3840x2400 --pos 0x0 --rotate normal
 
-sleep 1
+sleep 3
 nitrogen --restore
