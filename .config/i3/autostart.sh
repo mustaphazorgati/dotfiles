@@ -7,7 +7,7 @@ urxvt -name ssh-add -e ssh-add && i3-msg "workspace --no-auto-back-and-forth num
 
 i3-msg "workspace --no-auto-back-and-forth number 2"
 
-sleep 5
+sleep 3
 for win in $(wmctrl -l | awk -F' ' '{print $1}'); do
     wmctrl -i -r $win -b remove,demands_attention
 done
