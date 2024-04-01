@@ -377,6 +377,7 @@ exec --no-startup-id signal-desktop
 exec --no-startup-id teams
 exec --no-startup-id slack
 exec --no-startup-id gitkraken
+exec --no-startup-id nextcloud
 exec --no-startup-id $HOME/.screenlayout/laptop.sh
 
 # AUTOSTART SCRIPT
