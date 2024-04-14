@@ -10,6 +10,7 @@ up | dhcp4-change | dhcp6-change)
 	mkdir -p /etc/systemd/timesyncd.conf.d
 	cat <<-THE_END >"/etc/systemd/timesyncd.conf.d/${CONNECTION_UUID}.conf"
 		[Time]
+		NTP=
 		NTP=$DHCP4_NTP_SERVERS
 	THE_END
 	systemctl restart systemd-timesyncd.service
@@ -19,3 +20,4 @@ down)
 	systemctl restart systemd-timesyncd.service
 	;;
 esac
+
