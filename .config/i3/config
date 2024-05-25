@@ -100,7 +100,7 @@ for_window [class="VirtualBox Manager"] floating enable
 for_window [class="VirtualBox Machine"] fullscreen enable
 for_window [class="Nitrogen"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
-for_window [class="Pavucontrol"] floating enable
+for_window [class="pavucontrol"] floating enable
 
 ##################################################################################
 #                                                                                #
