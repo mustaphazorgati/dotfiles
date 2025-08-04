@@ -1,0 +1,7 @@
+[a-z].thumbs.redditmedia.com
+(\.|^)redd\.it$
+(\.|^)reddit\.com$
+(\.|^)twimg\.com$
+(\.|^)googleapis\.com$
+(\.|^)events\.data\.microsoft\.com$
+(\.|^)signal\.org$
