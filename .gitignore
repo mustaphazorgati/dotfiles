@@ -2,3 +2,4 @@
 target/
 .dotfiles
 .sdkmanrc
+.idea/
