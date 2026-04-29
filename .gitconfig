@@ -1,7 +1,7 @@
 [user]
 	email = 15628173+mustaphazorgati@users.noreply.github.com
   name = Mustapha Zorgati
-  signingKey = 90368EAAFE98F631F9AF9615BFF92FDA34CDC6F 
+  signingKey = ~/.ssh/id_ed25519.pub
 [color]
 	ui = true
 [core]
@@ -17,9 +17,10 @@
   tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f "
 [gpg]
-	program = gpg
+  program = ssh
+  format = ssh
 [commit]
-	gpgsign = false
+	gpgsign = true
 [tag]
 	forceSignAnnotated = true
 [init]
